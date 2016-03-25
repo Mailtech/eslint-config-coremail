@@ -1,5 +1,5 @@
 
-# Common shared ESLint config files for projects of Coremail (c) Mailtech Ltd.
+# ESLint config files for Coremail (c)
 [![npm][npm-image]][npm-url]
 
 [npm-image]: https://img.shields.io/npm/v/eslint-config-coremail.svg
@@ -39,7 +39,7 @@ Then, add this to your `.eslintrc.json` file:
 
     ```json
     {
-      "extends" : "./node_modules/eslint-config-coremail/config/compliant"
+      "extends" : "./node_modules/eslint-config-coremail/config/compliant.yaml"
     }
     ```
 
