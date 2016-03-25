@@ -1,0 +1,12 @@
+
+
+rules:
+    # disable debatable rules
+    semi                            :  off
+    quotes                          :  off
+    # sample test codes have many unused / undeclared symbol
+    eqeqeq                          :  off
+    no-undef                        :  off
+    no-redeclare                    :  off
+    no-unused-vars                  :  off
+    no-unreachable                  :  off

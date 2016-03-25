@@ -1,0 +1,33 @@
+
+
+extends: [standard]
+plugins: [html]
+
+
+rules:
+    no-mixed-spaces-and-tabs        : [error]
+    indent                          :
+                                    - off
+                                    - 4
+                                    - SwitchCase          : 0
+                                      VariableDeclarator  : { var : 1, let : 1, const : 1 }
+    semi                            : [off, never]
+    quotes                          : [error, single, avoid-escape]
+    arrow-parens                    : [error, as-needed]
+    operator-linebreak              : [error, before, { overrides : { ? : after } }]
+    comma-dangle                    : [error, always-multiline]
+    prefer-const                    : [off]
+    yoda                            : [off]
+    no-new                          : [off]
+    default-case                    : [off]
+    one-var                         : [off]
+    space-before-function-paren     : [off]
+    space-before-blocks             : [off]
+    no-multiple-empty-lines         : [off]
+    no-multi-spaces                 : [off]
+    keyword-spacing                 : [off]
+    key-spacing                     : [off]
+    comma-spacing                   : [off]
+    space-infix-ops                 : [off]
+    spaced-comment                  : [off]
+    eol-last                        : [off]
