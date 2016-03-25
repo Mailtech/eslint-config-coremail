@@ -7,7 +7,7 @@ plugins: [html]
 rules:
     no-mixed-spaces-and-tabs        : [error]
     indent                          :
-                                    - off
+                                    - error
                                     - 4
                                     - SwitchCase          : 0
                                       VariableDeclarator  : { var : 1, let : 1, const : 1 }

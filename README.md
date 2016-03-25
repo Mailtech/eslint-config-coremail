@@ -13,7 +13,7 @@ To use this config, add this to your `package.json`
 {
   "devDependencies"  : {
     "eslint"                 : "^2.0.0",
-    "eslint-config-coremail" : ""
+    "eslint-config-coremail" : "0.0.2"
   }
 }
 ```
@@ -25,22 +25,18 @@ npm install eslint eslint-config-coremail
 ```
 
 
-Then, add this to your `.eslintrc.json` file: 
+Then, add this to your `.eslintrc.yaml` file: 
 
 - Using standard rules
 
-    ```json
-    {
-      "extends" : "coremail"
-    }
+    ```yaml
+    extends: coremail
     ```
 
 - Applying compliant rules (old IE compatible)
 
-    ```json
-    {
-      "extends" : "./node_modules/eslint-config-coremail/config/compliant.yaml"
-    }
+    ```yaml
+    extends: coremail/config/compliant.yaml
     ```
 
 
