@@ -14,7 +14,7 @@ rules:
     semi                            : [off, never]
     quotes                          : [error, single, avoid-escape]
     arrow-parens                    : [error, as-needed]
-    operator-linebreak              : [error, before, { overrides : { ? : after } }]
+    operator-linebreak              : [error, before, { overrides : { "?" : after } }]
     comma-dangle                    : [error, always-multiline]
     prefer-const                    : [off]
     yoda                            : [off]
