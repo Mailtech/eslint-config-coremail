@@ -25,6 +25,7 @@ rules:
     space-before-blocks             : [off]
     no-multiple-empty-lines         : [off]
     no-multi-spaces                 : [off]
+    no-trailing-spaces              : [off]
     keyword-spacing                 : [off]
     key-spacing                     : [off]
     comma-spacing                   : [off]
