@@ -15,7 +15,8 @@ rules:
     quotes                          : [error, single, avoid-escape]
     arrow-parens                    : [error, as-needed]
     operator-linebreak              : [error, before, { overrides : { "?" : after } }]
-    comma-dangle                    : [error, always-multiline]
+    # object literal can not be used in chrome 49
+    comma-dangle                    : [off, always-multiline]
     prefer-const                    : [off]
     yoda                            : [off]
     no-new                          : [off]
