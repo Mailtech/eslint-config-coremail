@@ -5,7 +5,7 @@ plugins: [html]
 
 
 rules:
-    no-mixed-spaces-and-tabs        : [error]
+    no-tabs                         : [error]
     indent                          :
                                     - error
                                     - 4
