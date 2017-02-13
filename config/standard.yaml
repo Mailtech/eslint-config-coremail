@@ -11,6 +11,8 @@ rules:
                                     - 4
                                     - SwitchCase          : 0
                                       VariableDeclarator  : { var : 1, let : 1, const : 1 }
+                                      ArrayExpression     : first
+                                      ObjectExpression    : first
     semi                            : [off, never]
     quotes                          : [error, single, avoid-escape]
     arrow-parens                    : [error, as-needed]

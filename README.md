@@ -13,7 +13,7 @@ To use this config, add this to your `package.json`
 {
   "devDependencies"  : {
     "eslint"                 : "^3.15.0",
-    "eslint-config-coremail" : "0.1.0"
+    "eslint-config-coremail" : "0.1.1"
   }
 }
 ```
