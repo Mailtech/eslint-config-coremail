@@ -17,5 +17,5 @@ rules:
                                         allowPattern  : .*
     comma-dangle                    : [error, never]
     # ES3 compliant END
-    no-mixed-spaces-and-tabs        : [error]
+    no-tabs                         : [error]
 
