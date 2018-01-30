@@ -2,10 +2,10 @@
 
 // noinspection NpmUsedModulesInstalled
 import {
-        Component,
-        property1,
-        property2,
-        property3,
+    Component,
+    property1,
+    property2,
+    property3,
 } from 'react'
 
 // noinspection JSUnusedLocalSymbols
@@ -24,7 +24,8 @@ var foo = {
         b : {id : 456, type : "Int"},
     },
 // fBar : function (x,y);
-    fOne    : function (a, b, c, d, e, f, g, h) {
+    fOne    : function (a, b, c, d,
+                        e, f, g, h) {
         // noinspection JSUnusedLocalSymbols
         var x = a
                 + b
@@ -38,9 +39,9 @@ var foo = {
         fTwo(a, b, c, fThree(d, e, f, g, h));
         // noinspection JSUnusedAssignment
         var z = a
-                == 'Some string' ? 'yes' : 'no';
+                === 'Some string' ? 'yes' : 'no';
         // noinspection JSUnusedAssignment
-        z = a == 10 ? 'yes' : 'no';
+        z = a === 10 ? 'yes' : 'no';
         var colors = ['red', 'green', 'blue', 'black', 'white', 'gray'];
         // noinspection JSUndeclaredVariable
         for (j = 0; j < 2; j++) i = a;
@@ -50,12 +51,19 @@ var foo = {
             var colorString = this.numbers[i];
     },
 
-    chainedCallSample : function (a, b, c, d, e, f) {
+    chainedCallSample(a, b, c, d,
+                      e, f, g, h) {
         // noinspection JSUnresolvedVariable, JSUnresolvedFunction, ES6ModulesDependencies, JSValidateTypes
-        chainRoot.firstCall(a, b, c, d, e, f, g).secondCall(a, b, c, d).thirdCall(a, b, c, d).fourthCall().q(a).r(a, b).s();
+        chainRoot.firstCall(a, b, c, d,
+            e, f, g, h).secondCall(a, b, c, d).thirdCall(a, b, c, d).fourthCall().q(a).r(a, b).s();
         // noinspection JSUnresolvedVariable, JSUnresolvedFunction, ES6ModulesDependencies, JSValidateTypes
         chainRoot.x().y()
                 .z();
+
+        // noinspection JSUnresolvedVariable, JSUnresolvedFunction, ES6ModulesDependencies, JSValidateTypes
+        chainRoot.xxx()
+                 .yyy()
+                 .zzz();
     },
 
     /**
@@ -70,20 +78,21 @@ var foo = {
         if (true) {
             return c;
         }
-        if (a == 'one' && (b
-                           == 'two'
-                           || c
-                              == 'three')) {
+        // noinspection UnreachableCodeJS
+        if (a === 'one' && (b
+                            === 'two'
+                            || c
+                               === 'three')) {
             return a + b + c + d;
         } else {
             // noinspection JSUnresolvedVariable
             return strD;
         }
         // noinspection UnreachableCodeJS
-        if (a == 'one') {
+        if (a === 'one') {
             return 1;
         }
-        else if (a == 'two') {
+        else if (a === 'two') {
             return 2;
         }
         var number = -10;
@@ -124,6 +133,15 @@ var foo = {
     },
 };
 
+funDeclare(require('jquery'), 300, 20, 10);
+
+function funDeclare($,
+                    mainHeight, HeadHeight, footerHeight) {
+    $('#main').height(Math.max(mainHeight - HeadHeight - footerHeight, Math.max(
+        $('.MainL').height(),
+        $('.MainR').height()
+    )));
+}
 
 /* eslint curly:            "off"       */
 /* eslint brace-style:      "off"       */

@@ -4,7 +4,7 @@
 import {Component} from 'react'
 
 // noinspection JSUnusedLocalSymbols
-function foo(x, y, z) {
+function foo(_x, y, z) {
     // noinspection JSUnresolvedFunction, JSUnresolvedVariable
     bar(1, b);
     var i = 0;
@@ -15,7 +15,7 @@ function foo(x, y, z) {
     var foo = function () {}
     if (!i > 10) {
         // noinspection JSDuplicatedDeclaration
-        for (var j = 0; j < 10; j++) {
+        for (let j = 0; j < 10; j++) {
             switch (j) {
             case 0:
                 // noinspection JSUndeclaredVariable
@@ -30,11 +30,10 @@ function foo(x, y, z) {
             var c = j > 5 ? "GT 5" : "LE 5";
         }
     } else {
-        // noinspection JSDuplicatedDeclaration
-        var j = 0;
+        let j = 0;
         try {
             while (j < 10) {
-                if (i == j || j > 5) {
+                if (i === j || j > 5) {
                     a[j] = i + j * 12;
                 }
                 i = (j << 2) & 4;
