@@ -7,12 +7,12 @@ import {Component} from 'react'
 function foo(_x, y, z) {
     // noinspection JSUnresolvedFunction, JSUnresolvedVariable
     bar(1, b);
-    var i = 0;
+    let i = 0;
     // noinspection JSUnusedLocalSymbols, JSDuplicatedDeclaration
-    var x = {0 : "zero", 1 : "one"};
-    var a = [0, 1, 2];
+    let x = {0 : "zero", 1 : "one"};
+    let a = [0, 1, 2];
     // noinspection JSUnusedLocalSymbols, UnterminatedStatementJS
-    var foo = function () {}
+    let foo = function () {}
     if (!i > 10) {
         // noinspection JSDuplicatedDeclaration
         for (let j = 0; j < 10; j++) {
@@ -27,7 +27,7 @@ function foo(_x, y, z) {
                 break;
             }
             // noinspection JSUnusedLocalSymbols
-            var c = j > 5 ? "GT 5" : "LE 5";
+            let c = j > 5 ? "GT 5" : "LE 5";
         }
     } else {
         let j = 0;

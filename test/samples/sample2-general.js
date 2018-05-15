@@ -1,7 +1,7 @@
 //
 
-var foo = function foo() {};
-var object = {};
+let foo = function foo() {};
+let object = {};
 foo(
         'demo',
 
@@ -30,7 +30,7 @@ foo(
             Comment
 */
 // noinspection JSUnusedGlobalSymbols
-var myLink  = {
+let myLink  = {
         img   : "btn.gif",
         text  : "Button",
         width : 128,
@@ -38,12 +38,12 @@ var myLink  = {
     local   = true,
     initial = -1;
 // noinspection JSUnusedGlobalSymbols
-var selector = "#id";
+let selector = "#id";
 
 // noinspection JSUnusedGlobalSymbols
-var color = "red";
+let color = "red";
 // noinspection JSUnusedGlobalSymbols
-var offset = 10;
+let offset = 10;
 
 // noinspection JSUnresolvedVariable
 varName = val;

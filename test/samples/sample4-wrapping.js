@@ -12,7 +12,7 @@ import {
 function buzz() { return 0; }
 
 // noinspection JSUnusedGlobalSymbols, JSCommentMatchesSignature
-var foo = {
+let foo = {
 
     numbers : ['one', 'two', 'three', 'four', 'five', 'six'],
     data    : {
@@ -27,7 +27,7 @@ var foo = {
     fOne    : function (a, b, c, d,
                         e, f, g, h) {
         // noinspection JSUnusedLocalSymbols
-        var x = a
+        let x = a
                 + b
                 + c
                 + d
@@ -38,16 +38,17 @@ var foo = {
         // noinspection JSUnresolvedFunction
         fTwo(a, b, c, fThree(d, e, f, g, h));
         // noinspection JSUnusedAssignment
-        var z = a
+        let z = a
                 === 'Some string' ? 'yes' : 'no';
         // noinspection JSUnusedAssignment
         z = a === 10 ? 'yes' : 'no';
-        var colors = ['red', 'green', 'blue', 'black', 'white', 'gray'];
+        let colors = ['red', 'green', 'blue', 'black', 'white', 'gray'];
         // noinspection JSUndeclaredVariable
         for (j = 0; j < 2; j++) i = a;
-        // noinspection JSUnusedLocalSymbols
-        for (var i = 0; i
+        // noinspection JSUnusedLocalSymbols, ES6ConvertVarToLetConst
+        for (let i = 0; i
                         < colors.length; i++)
+            // eslint-disable-next-line no-var
             var colorString = this.numbers[i];
     },
 
@@ -95,7 +96,7 @@ var foo = {
         else if (a === 'two') {
             return 2;
         }
-        var number = -10;
+        let number = -10;
         // noinspection JSUnresolvedVariable
         while (x < 0) {
             number = number + 1;
@@ -108,7 +109,7 @@ var foo = {
 
     fThree : function (strA, strB, strC, strD, strE) {
         // noinspection JSCheckFunctionSignatures
-        var number = prompt("Enter a number:", 0);
+        let number = prompt("Enter a number:", 0);
         switch (number) {
         case 0 :
             alert("Zero");

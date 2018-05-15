@@ -3,7 +3,7 @@
 const A = 'A', B = 'B', C = 'C';
 
 // noinspection UnnecessaryLocalVariableJS
-var varA = A,
+let varA = A,
     varB = B,
     varC = C;
 

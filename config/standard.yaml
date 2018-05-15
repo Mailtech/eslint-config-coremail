@@ -1,10 +1,14 @@
 
 
 extends: [standard]
-plugins: [html]
+
+
+parserOptions:
+    ecmaVersion: 2018
 
 
 rules:
+    no-var                          : [error]
     no-tabs                         : [error]
     indent                          :
                                     - error
