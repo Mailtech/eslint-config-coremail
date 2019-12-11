@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 Mailtech.cn, Ltd. All Rights Reserved.
+ * Copyright (c) 2020 Coremail.cn, Ltd. All Rights Reserved.
  */
 
 {   // eslint-disable-line no-lone-blocks

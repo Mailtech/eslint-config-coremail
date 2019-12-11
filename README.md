@@ -2,8 +2,16 @@
 # ESLint config files for Coremail (c)
 [![npm][npm-image]][npm-url]
 
-[npm-image]: https://img.shields.io/npm/v/eslint-config-coremail.svg
-[npm-url]: https://npmjs.org/package/eslint-config-coremail
+[npm-image]: https://img.shields.io/npm/v/eslint-plugin-coremail.svg
+[npm-url]: https://npmjs.org/package/eslint-plugin-coremail
+
+## Important Note
+
+Since eslint 6 changes it's config resolving mechanism, config module can not share outside project root.
+
+<ins>**This project has been changed to a plugin module and renamed (only package name).**</ins>
+
+For more information, check this issue: https://github.com/eslint/eslint/issues/12654
 
 ## Usage
 
@@ -12,8 +20,8 @@ To use this config, add this to your `package.json`
 ```json
 {
   "devDependencies"  : {
-    "eslint"                 : "4.19.1",
-    "eslint-config-coremail" : "0.3.0"
+    "eslint"                 : "6.7.2",
+    "eslint-plugin-coremail" : "0.4.0"
   }
 }
 ```
@@ -21,7 +29,7 @@ To use this config, add this to your `package.json`
 or install manually
 
 ```bash
-npm install eslint eslint-config-coremail
+npm install eslint eslint-plugin-coremail
 ```
 
 
@@ -30,13 +38,13 @@ Then, add this to your `.eslintrc.yaml` file:
 - Using standard rules
 
     ```yaml
-    extends: coremail
+    extends: plugin:coremail/standard
     ```
 
 - Applying compliant rules (old IE compatible)
 
     ```yaml
-    extends: coremail/config/compliant.yaml
+    extends: plugin:coremail/compliant
     ```
 
 
