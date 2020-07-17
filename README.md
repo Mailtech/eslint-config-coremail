@@ -20,8 +20,8 @@ To use this config, add this to your `package.json`
 ```json
 {
   "devDependencies"  : {
-    "eslint"                 : "6.7.2",
-    "eslint-plugin-coremail" : "0.4.0"
+    "eslint"                 : "7.4.0",
+    "eslint-plugin-coremail" : "0.4.1"
   }
 }
 ```

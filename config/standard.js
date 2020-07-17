@@ -46,6 +46,7 @@ module.exports = {
         'no-new'                        : [off],
         'no-void'                       : [off],
         'no-case-declarations'          : [off],
+        'no-inner-declarations'         : [off],
         'default-case'                  : [off],
         'one-var'                       : [off],
         'dot-notation'                  : [off],
