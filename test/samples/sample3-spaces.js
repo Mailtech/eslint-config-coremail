@@ -1,6 +1,6 @@
 //
 
-// noinspection NpmUsedModulesInstalled
+// noinspection ES6UnusedImports
 import {Component} from 'react'
 
 // noinspection JSUnusedLocalSymbols
@@ -18,11 +18,11 @@ function foo(_x, y, z) {
         for (let j = 0; j < 10; j++) {
             switch (j) {
             case 0:
-                // noinspection JSUndeclaredVariable
+                // noinspection JSUndeclaredVariable, JSUnresolvedReference
                 value = "zero";
                 break;
             case 1:
-                // noinspection JSUndeclaredVariable
+                // noinspection JSUndeclaredVariable, JSUnresolvedReference
                 value = "one";
                 break;
             }

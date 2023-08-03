@@ -1,14 +1,12 @@
 /**
- * Copyright (c) 2020 Coremail.cn, Ltd. All Rights Reserved.
+ * Copyright (c) 2023 Coremail.cn, Ltd. All Rights Reserved.
  */
 
 const error = 'error';
 
 module.exports = {
 
-    parserOptions : {
-        ecmaVersion : 3,
-    },
+    parserOptions : {ecmaVersion : 3, allowReserved : true},
 
     rules : {
         /* eslint-disable indent *//* @formatter:off */

@@ -7,7 +7,7 @@
 
 ## Important Note
 
-Since eslint 6 changes it's config resolving mechanism, config module can not share outside project root.
+Since eslint 6 changes its config resolving mechanism, config module can not share outside project root.
 
 <ins>**This project has been changed to a plugin module and renamed (only package name).**</ins>
 
@@ -20,8 +20,8 @@ To use this config, add this to your `package.json`
 ```json
 {
   "devDependencies"  : {
-    "eslint"                 : "7.4.0",
-    "eslint-plugin-coremail" : "0.4.1"
+    "eslint"                 : "8.46.0",
+    "eslint-plugin-coremail" : "0.5.0"
   }
 }
 ```
@@ -51,7 +51,7 @@ Then, add this to your `.eslintrc.yaml` file:
 ## Learn more
 
 For the full listing of rules that eslint supports, and more, visit 
-For more information the full listing of rules, editor plugins, FAQs, and more, visit the
+For more information on the full listing of rules, editor plugins, FAQs, and more, visit the
 [ESLint official site](http://eslint.org/docs/rules/).
 
 ## License

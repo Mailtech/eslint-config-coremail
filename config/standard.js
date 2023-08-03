@@ -1,20 +1,16 @@
 /**
- * Copyright (c) 2020 Coremail.cn, Ltd. All Rights Reserved.
+ * Copyright (c) 2023 Coremail.cn, Ltd. All Rights Reserved.
  */
 
-const error = 'error', off = 'off', first = 'first';
+const error = 'error', off = 'off', first = 'first', never = 'never';
 
 module.exports = {
 
-    extends : ['standard'],
+    extends       : ['standard'],
+    parserOptions : { ecmaVersion : 2024 },
 
-    parserOptions : {
-        ecmaVersion : 2020,
-    },
-
+    /* eslint-disable indent */// @formatter:off
     rules : {
-        /* eslint-disable indent *//* @formatter:off */
-
         'no-var'                        : [error],
         'no-tabs'                       : [error],
         'indent'                        : [error, 4, {
@@ -29,10 +25,10 @@ module.exports = {
                                                 MemberExpression    : off,
                                                 ignoreComments      : true,
                                           }],
-        'semi'                          : [off, 'never'],
+        'semi'                          : [off, never],
         'quotes'                        : [error, 'single', 'avoid-escape'],
         'arrow-parens'                  : [error, 'as-needed'],
-        'operator-linebreak'            : [error, 'before'], // corrected now, ternary operator should has nothing special
+        'operator-linebreak'            : [error, 'before'], // corrected now, ternary operator should have nothing special
         'comma-dangle'                  : [error, { // more friendly to VCS system / manual code arrangements
                                                 arrays    : 'always-multiline',
                                                 objects   : 'always-multiline',
@@ -52,7 +48,7 @@ module.exports = {
         'dot-notation'                  : [off],
         'quote-props'                   : [off],
         'object-curly-spacing'          : [off],
-        'space-before-function-paren'   : [error, {named: 'never', anonymous: 'ignore', asyncArrow: 'always'}],
+        'space-before-function-paren'   : [error, {named: never, anonymous: 'ignore', asyncArrow: 'always'}],
         'space-before-blocks'           : [error],
         'no-multiple-empty-lines'       : [off],
         'no-multi-spaces'               : [error, {
@@ -65,5 +61,15 @@ module.exports = {
         'space-infix-ops'               : [error],
         'spaced-comment'                : [error],
         'eol-last'                      : [error],
+        'camelcase'                     : [error, {
+                                                properties          : never,
+                                                ignoreDestructuring : true,
+                                                ignoreGlobals       : true,
+                                          }],
+        'multiline-ternary'             : [off],
+        'array-callback-return'         : [off],
+        'no-empty'                      : [off],
+        'n/no-path-concat'              : [off],
+        'n/no-exports-assign'           : [off],
     },
 };

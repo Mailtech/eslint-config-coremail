@@ -1,6 +1,6 @@
 //
 
-// noinspection NpmUsedModulesInstalled
+// noinspection JSUnresolvedReference, ES6UnusedImports
 import {
     Component,
     property1,
@@ -24,8 +24,8 @@ let foo = {
         b : {id : 456, type : "Int"},
     },
 // fBar : function (x,y);
-    fOne    : function (a, b, c, d,
-                        e, f, g, h) {
+    fOne    : function (a, b, c, d, e,
+                        f, g, h, i, j) {
         // noinspection JSUnusedLocalSymbols
         let x = a
                 + b
@@ -43,7 +43,6 @@ let foo = {
         // noinspection JSUnusedAssignment
         z = a === 10 ? 'yes' : 'no';
         let colors = ['red', 'green', 'blue', 'black', 'white', 'gray'];
-        // noinspection JSUndeclaredVariable
         for (j = 0; j < 2; j++) i = a;
         // noinspection JSUnusedLocalSymbols, ES6ConvertVarToLetConst
         for (let i = 0; i
@@ -54,7 +53,7 @@ let foo = {
 
     chainedCallSample(a, b, c, d,
                       e, f, g, h) {
-        // noinspection JSUnresolvedVariable, JSUnresolvedFunction, ES6ModulesDependencies, JSValidateTypes
+        // noinspection JSUnresolvedVariable, JSUnresolvedFunction, ES6ModulesDependencies, JSValidateTypes, JSCheckFunctionSignatures
         chainRoot.firstCall(a, b, c, d,
             e, f, g, h).secondCall(a, b, c, d).thirdCall(a, b, c, d).fourthCall().q(a).r(a, b).s();
         // noinspection JSUnresolvedVariable, JSUnresolvedFunction, ES6ModulesDependencies, JSValidateTypes
@@ -70,12 +69,12 @@ let foo = {
     /**
      * Function JSDoc. Long lines can be wrapped with 'Comments'/'Wrap at right margin' option
      * @param {string} a Parameter A description.
-     * @param {string} b Parameter B description. Can extend beyond the right margin.
+     * @param {string} b Parameter B description. It can extend beyond the right margin.
      */
     fTwo : function (a, b, c, d) {
-        // noinspection JSUnresolvedFunction
-        foo(a, b, c, d); // Line comment which can be wrapped if long.
-        // noinspection ConstantIfStatementJS
+        // noinspection JSUnresolvedFunction, JSValidateTypes
+        foo(a, b, c, d); // line comment which can be wrapped if long.
+        // noinspection ConstantIfStatementJS, PointlessBooleanExpressionJS
         if (true) {
             return c;
         }
@@ -134,6 +133,7 @@ let foo = {
     },
 };
 
+// noinspection NpmUsedModulesInstalled
 funDeclare(require('jquery'), 300, 20, 10);
 
 function funDeclare($,
@@ -144,5 +144,5 @@ function funDeclare($,
     )));
 }
 
-/* eslint curly:            "off"       */
-/* eslint brace-style:      "off"       */
+/* eslint curly: off */
+/* eslint brace-style: off */
