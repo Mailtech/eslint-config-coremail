@@ -2,15 +2,22 @@
  * Copyright (c) 2023 Coremail.cn, Ltd. All Rights Reserved.
  */
 
-const error = 'error', off = 'off', first = 'first', never = 'never';
+import standard from 'eslint-config-standard';
+import {error, first, mergeRules, never, off} from './util.js';
 
-module.exports = {
+export default {
 
-    extends       : ['standard'],
-    parserOptions : { ecmaVersion : 2024 },
+    languageOptions : {
+        ecmaVersion   : 'latest',
+        parserOptions : {ecmaFeatures : {jsx : true}},
+    },
+
+    plugins : Object.fromEntries(await Promise.all(standard.plugins.map(async key => [
+        key, (await import(`eslint-plugin-${key}`)).default,
+    ]))),
 
     /* eslint-disable indent */// @formatter:off
-    rules : {
+    rules : mergeRules(standard.rules, {
         'no-var'                        : [error],
         'no-tabs'                       : [error],
         'indent'                        : [error, 4, {
@@ -71,5 +78,8 @@ module.exports = {
         'no-empty'                      : [off],
         'n/no-path-concat'              : [off],
         'n/no-exports-assign'           : [off],
-    },
+
+        // waiting https://github.com/import-js/eslint-plugin-import/issues/2556
+        'import/export' : [off],
+    }),
 };

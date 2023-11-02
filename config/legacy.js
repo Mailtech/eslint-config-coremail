@@ -2,11 +2,15 @@
  * Copyright (c) 2023 Coremail.cn, Ltd. All Rights Reserved.
  */
 
-const error = 'error';
+import {error} from './util.js';
 
-module.exports = {
+export default {
 
-    parserOptions : {ecmaVersion : 3, allowReserved : true},
+    languageOptions : {
+        ecmaVersion   : 3,
+        sourceType    : 'script',
+        parserOptions : {allowReserved : true},
+    },
 
     rules : {
         /* eslint-disable indent *//* @formatter:off */

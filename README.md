@@ -2,51 +2,45 @@
 # ESLint config files for Coremail (c)
 [![npm][npm-image]][npm-url]
 
-[npm-image]: https://img.shields.io/npm/v/eslint-plugin-coremail.svg
-[npm-url]: https://npmjs.org/package/eslint-plugin-coremail
-
-## Important Note
-
-Since eslint 6 changes its config resolving mechanism, config module can not share outside project root.
-
-<ins>**This project has been changed to a plugin module and renamed (only package name).**</ins>
-
-For more information, check this issue: https://github.com/eslint/eslint/issues/12654
+[npm-image]: https://img.shields.io/npm/v/eslint-config-coremail.svg
+[npm-url]: https://npmjs.org/package/eslint-config-coremail
 
 ## Usage
 
-To use this config, add this to your `package.json`
-
-```json
-{
-  "devDependencies"  : {
-    "eslint"                 : "8.46.0",
-    "eslint-plugin-coremail" : "0.5.0"
-  }
-}
-```
-
-or install manually
+This package exports [a flat ESLint configuration](https://eslint.org/blog/2022/08/new-config-system-part-2/)
+which is supported since `eslint 8.21.0`
 
 ```bash
-npm install eslint eslint-plugin-coremail
+npm install --save-dev eslint eslint-config-coremail
 ```
 
+Example `eslint.config.js` in esm:
+```js
+import {configs} from 'eslint-config-coremail';
 
-Then, add this to your `.eslintrc.yaml` file: 
+export default [
+    // default using browser & node env
+    configs.standard,
+    // for old IE compatible
+    {
+        files : ['path/to/legacy/**'],
+        ...configs.legacy,
+    },
+]
+```
 
-- Using standard rules
-
-    ```yaml
-    extends: plugin:coremail/standard
-    ```
-
-- Applying compliant rules (old IE compatible)
-
-    ```yaml
-    extends: plugin:coremail/compliant
-    ```
-
+Example `eslint.config.js` in commonjs:
+```js
+module.export = import('eslint-config-coremail').then(({configs}) => [
+    // default using browser & node env
+    configs.standard,
+    // for old IE compatible
+    {
+        files : ['path/to/legacy/**'],
+        ...configs.legacy,
+    },
+]);
+```
 
 ## Learn more
 
