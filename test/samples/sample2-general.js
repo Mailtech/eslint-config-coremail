@@ -5,7 +5,7 @@ let object = {};
 foo(
         'demo',
 
-        /* eslint indent: "off" */
+        /* eslint @stylistic/indent: "off" */
         {
             title : 'Demo',
             width : 100,
@@ -47,6 +47,3 @@ let offset = 10;
 
 // noinspection JSUnresolvedVariable
 varName = val;
-
-
-
