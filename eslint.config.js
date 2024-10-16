@@ -1,13 +1,16 @@
-// noinspection JSUnusedGlobalSymbols
+/**
+ * Copyright (c) 2024 Coremail.cn, Ltd. All Rights Reserved.
+ */
 
 import {configs} from './config/index.js';
 
-export default [configs.es, {
+export default [configs.node, {
     files : ['test/samples/**'],
     rules : {
         // disable debatable rules
-        'semi'   : 'off',
-        'quotes' : 'off',
+        '@stylistic/semi'   : 'off',
+        '@stylistic/quotes' : 'off',
+
         // sample test codes have many unused / undeclared symbols
         'no-undef'              : 'off',
         'no-unused-vars'        : 'off',

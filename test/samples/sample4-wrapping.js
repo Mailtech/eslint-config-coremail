@@ -145,4 +145,4 @@ function funDeclare($,
 }
 
 /* eslint curly: off */
-/* eslint brace-style: off */
+/* eslint @stylistic/brace-style: off */

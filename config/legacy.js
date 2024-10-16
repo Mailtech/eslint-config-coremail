@@ -1,31 +1,23 @@
 /**
- * Copyright (c) 2023 Coremail.cn, Ltd. All Rights Reserved.
+ * Copyright (c) 2024 Coremail.cn, Ltd. All Rights Reserved.
  */
 
 import {error} from './util.js';
 
 export default {
-
     languageOptions : {
         ecmaVersion   : 3,
         sourceType    : 'script',
         parserOptions : {allowReserved : true},
     },
 
-    rules : {
-        /* eslint-disable indent *//* @formatter:off */
+    plugins : {'@stylistic' : (await import('@stylistic/eslint-plugin')).default},
 
-        // here two rules are only for ES3 compliant / IE6 supports
-        'quote-props'                   : [error, 'as-needed', {
-                                                keywords    : true,
-                                                unnecessary : false,
-                                          }],
-        'dot-notation'                  : [error, {
-                                                allowKeywords : false,
-                                                allowPattern  : '.*',
-                                          }],
-        'comma-dangle'                  : [error, 'never'],
-        // ES3 compliant END
-        'no-tabs'                       : [error],
+    // rules only for ES3 compliant / IE6 ~ IE8
+    rules : {
+        'dot-notation'            : [error, {allowKeywords : false, allowPattern : '.*'}],
+        '@stylistic/quote-props'  : [error, 'as-needed', {keywords : true, unnecessary : false}],
+        '@stylistic/comma-dangle' : [error, 'never'],
+        '@stylistic/no-tabs'      : [error],
     },
 };

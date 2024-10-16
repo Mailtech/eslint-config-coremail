@@ -1,7 +1,7 @@
 {
   "name"             : "eslint-config-coremail",
   "description"      : "Javascript Standard Style - ESLint Shareable Config for coremail.cn",
-  "version"          : "0.99.1",
+  "version"          : "1.0.2",
   "author"           : {
     "name"  : "William Leung",
     "email" : "williamleung2006@gmail.com"
@@ -24,6 +24,10 @@
 
   "license"          : "MIT",
   "main"             : "config/index.js",
+  "exports"          : {
+    "."              : "./config/index.js",
+    "./package.json" : "./package.json"
+  },
   "files"            : [
     "config/*"
   ],
@@ -33,15 +37,18 @@
   },
 
   "peerDependencies" : {
-    "eslint"  : "^8.52.0",
+    "eslint"  : "^9.13.0",
     "globals" : "*"
   },
 
   "devDependencies"  : {
-    "eslint" : "~8.52.0"
+    "eslint" : "~9.13.0"
   },
 
   "dependencies"     : {
-    "eslint-config-standard" : "~17.1.0"
+    "eslint-plugin-import"     : "^2.31.0",
+    "eslint-plugin-n"          : "^17.11.1",
+    "eslint-plugin-promise"    : "^7.1.0",
+    "@stylistic/eslint-plugin" : "^2.9.0"
   }
 }
