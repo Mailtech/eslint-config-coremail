@@ -1,16 +1,18 @@
 /**
- * Copyright (c) 2023 Coremail.cn, Ltd. All Rights Reserved.
+ * Copyright (c) 2026 Coremail.cn, Ltd. All Rights Reserved.
  */
 
 import {use} from './util.js';
+import {browser, node} from './compactGlobals.js';
 import es from './standard.js';
 import es3 from './legacy.js';
 
 export {globals, use, mergeRules} from './util.js';
-export const configs = {
+export const configs = Object.freeze({
     es,
-    node     : use(es, 'node'),
-    browser  : use(es, 'browser'),
-    standard : use(es, 'node', 'browser'),
-    legacy   : use(es3, 'builtin', 'browser'),
-};
+    es3,
+    node     : use(es, {globals : node}),
+    browser  : use(es, {globals : browser}),
+    standard : use(es, {globals : {...browser, ...node}}),
+    legacy   : use(es3, {globals : {...browser, JSON : 'readonly'}}),
+});

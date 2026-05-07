@@ -1,25 +1,12 @@
 {
   "name"             : "eslint-config-coremail",
   "description"      : "Javascript Standard Style - ESLint Shareable Config for coremail.cn",
-  "version"          : "1.0.2",
-  "author"           : {
-    "name"  : "William Leung",
-    "email" : "williamleung2006@gmail.com"
-  },
-
+  "version"          : "1.1.2",
   "type"             : "module",
-
-  "keywords"         : [
-    "code linter",
-    "code sytle",
-    "code checker",
-    "eslint",
-    "coremail"
-  ],
-
+  "keywords"         : [],
   "repository"       : {
     "type" : "git",
-    "url"  : "https://github.com/Mailtech/eslint-config-coremail.git"
+    "url"  : "git+https://github.com/Mailtech/eslint-config-coremail.git"
   },
 
   "license"          : "MIT",
@@ -37,18 +24,17 @@
   },
 
   "peerDependencies" : {
-    "eslint"  : "^9.13.0",
-    "globals" : "*"
+    "eslint" : "^9.39.4 || ~10.3.0"
   },
 
   "devDependencies"  : {
-    "eslint" : "~9.13.0"
+    "eslint" : "^10.3.0"
   },
 
   "dependencies"     : {
-    "eslint-plugin-import"     : "^2.31.0",
-    "eslint-plugin-n"          : "^17.11.1",
-    "eslint-plugin-promise"    : "^7.1.0",
-    "@stylistic/eslint-plugin" : "^2.9.0"
+    "@eslint/js"               : "^10.0.1",
+    "eslint-plugin-n"          : "^18.0.1",
+    "eslint-plugin-promise"    : "^7.3.0",
+    "@stylistic/eslint-plugin" : "^5.10.0"
   }
 }

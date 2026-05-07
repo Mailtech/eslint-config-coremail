@@ -6,19 +6,12 @@ import {createRequire} from 'module';
 
 export const error = 'error', off = 'off', first = 'first', never = 'never';
 
-// try using 'globals' defined in the project first, it can be different between one required by eslint itself
-export const globals = (require => {
-    // projectDir (../../..)
-    //  +- node_modules (../..)
-    //      +- eslint
-    //      +- globals
-    //      +- eslint-config-email (..)
-    //          +- config (this location)
+export const globals = Object.freeze(require => {
     try {
-        // noinspection JSFileReferences
-        return require('../../../node_modules/globals');
-    } catch {
+        // noinspection NpmUsedModulesInstalled
         return require('globals');
+    } catch {
+        return {};
     }
 })(createRequire(import.meta.url));
 

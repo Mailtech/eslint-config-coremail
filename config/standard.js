@@ -2,6 +2,7 @@
  * Copyright (c) 2024 Coremail.cn, Ltd. All Rights Reserved.
  */
 
+import js from '@eslint/js';
 import {baseRules, plugins, styleRules} from './imported.js';
 import {error, first, mergeRules, never, off} from './util.js';
 
@@ -11,13 +12,13 @@ export default {
         parserOptions : {ecmaFeatures : {jsx : true}},
     },
 
-    plugins,
-    rules : mergeRules(baseRules, styleRules, { /* eslint-disable @stylistic/indent */// @formatter:off
+    plugins, /* eslint-disable @stylistic/indent */// @formatter:off
+    rules : mergeRules(js.configs.recommended.rules, baseRules, styleRules, {
         'no-var'                                     : [error],
         '@stylistic/no-tabs'                         : [error],
         '@stylistic/indent'                          : [error, 4, {
                                                            SwitchCase          : 0,
-                                                           VariableDeclarator  : {var : 1, let : 1, const : 1},
+                                                           VariableDeclarator  : first,
                                                            ImportDeclaration   : first,
                                                            ArrayExpression     : first,
                                                            ObjectExpression    : first,
@@ -25,11 +26,16 @@ export default {
                                                            FunctionExpression  : {parameters: first},
                                                            CallExpression      : {arguments: 1},
                                                            MemberExpression    : off,
+                                                           assignmentOperator  : off,
                                                            ignoreComments      : true,
-                                                           ignoredNodes        : styleRules['@stylistic/indent'][2].ignoredNodes,
+                                                           ignoredNodes        : [
+                                                               ...styleRules['@stylistic/indent'][2].ignoredNodes,
+                                                               // TODO waiting https://github.com/eslint-stylistic/eslint-stylistic/issues/1208
+                                                               'ExportNamedDeclaration > VariableDeclaration > VariableDeclarator',
+                                                           ],
                                                        }],
         '@stylistic/semi'                            : [off],
-        '@stylistic/quotes'                          : [error, 'single', 'avoid-escape'],
+        '@stylistic/quotes'                          : [error, 'single', {avoidEscape: true}],
         '@stylistic/arrow-parens'                    : [error, 'as-needed'],
         '@stylistic/operator-linebreak'              : [error, 'before'], // ternary operator should have nothing special
         '@stylistic/multiline-ternary'               : [off],
@@ -76,7 +82,5 @@ export default {
 
         'n/no-path-concat'                           : [off],
         'n/no-exports-assign'                        : [off],
-
-        'import/no-webpack-loader-syntax'            : [off],
     }),
 };

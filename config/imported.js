@@ -4,19 +4,18 @@
 
 export const plugins = {
     n            : (await import('eslint-plugin-n')).default,
-    import       : (await import('eslint-plugin-import')).default,
     promise      : (await import('eslint-plugin-promise')).default,
     '@stylistic' : (await import('@stylistic/eslint-plugin')).default,
 };
 
 // rules imported from
-// - https://github.com/neostandard/neostandard/blob/v0.11.6/lib/configs/
+// - https://github.com/neostandard/neostandard/blob/v0.13.0/lib/configs/
 // - https://github.com/standard/eslint-config-standard/tree/v17.1.0
 
 /* eslint-disable @stylistic/indent */// @formatter:off
 // noinspection SpellCheckingInspection
 export const baseRules = {
-    // imported from https://github.com/neostandard/neostandard/blob/v0.11.6/lib/configs/base.js
+    // imported from https://github.com/neostandard/neostandard/blob/v0.13.0/lib/configs/base.js
     //           and https://github.com/standard/eslint-config-standard/blob/v17.1.0/.eslintrc.json
     'no-var'                                   : ['warn'],
     'object-shorthand'                         : ['warn', 'properties'],
@@ -139,12 +138,13 @@ export const baseRules = {
     'valid-typeof'                             : ['error', {requireStringLiterals: true}],
     'yoda'                                     : ['error', 'never'],
 
-    'import/export'                            : ['error'],
-    'import/first'                             : ['error'],
-    'import/no-absolute-path'                  : ['error', {esmodule: true, commonjs: true, amd: false}],
-    'import/no-duplicates'                     : ['error'],
-    'import/no-named-default'                  : ['error'],
-    'import/no-webpack-loader-syntax'          : ['error'],
+    // removed from neostandard https://github.com/neostandard/neostandard/blob/v0.13.0/README.md#adding-back-import-checking
+    // 'import-x/export'                       : ['error'],
+    // 'import-x/first'                        : ['error'],
+    // 'import-x/no-absolute-path'             : ['error', {esmodule: true, commonjs: true, amd: false}],
+    // 'import-x/no-duplicates'                : ['error'],
+    // 'import-x/no-named-default'             : ['error'],
+    // 'import-x/no-webpack-loader-syntax'     : ['error'],
 
     // TODO: Should only be active for server side scripts
     'n/handle-callback-err'                    : ['error', '^(err|error)$'],
@@ -159,7 +159,7 @@ export const baseRules = {
 }
 
 export const styleRules = {
-    // imported from https://github.com/neostandard/neostandard/blob/v0.11.6/lib/configs/style.js
+    // imported from https://github.com/neostandard/neostandard/blob/v0.13.0/lib/configs/style.js
     //       same to https://github.com/standard/eslint-config-standard/blob/v17.1.0/.eslintrc.json
     '@stylistic/array-bracket-spacing'         : ['error', 'never'],
     '@stylistic/arrow-spacing'                 : ['error', {before: true, after: true}],
@@ -177,7 +177,7 @@ export const styleRules = {
     '@stylistic/computed-property-spacing'     : ['error', 'never', {enforceForClassMembers: true}],
     '@stylistic/dot-location'                  : ['error', 'property'],
     '@stylistic/eol-last'                      : ['error'],
-    '@stylistic/func-call-spacing'             : ['error', 'never'],
+    '@stylistic/function-call-spacing'         : ['error', 'never'],
     '@stylistic/generator-star-spacing'        : ['error', {before: true, after: true}],
     '@stylistic/indent'                        : ['error', 2, {
                                                       SwitchCase               : 1,
@@ -218,11 +218,11 @@ export const styleRules = {
     '@stylistic/no-whitespace-before-property' : ['error'],
     '@stylistic/object-curly-newline'          : ['error', {multiline: true, consistent: true}],
     '@stylistic/object-curly-spacing'          : ['error', 'always'],
-    '@stylistic/object-property-newline'       : ['error', {allowMultiplePropertiesPerLine: true}],
+    '@stylistic/object-property-newline'       : ['error', {allowAllPropertiesOnSameLine: true}],
     '@stylistic/operator-linebreak'            : ['error', 'after', {overrides: {'?': 'before', ':': 'before', '|>': 'before'}}],
     '@stylistic/padded-blocks'                 : ['error', {blocks: 'never', switches: 'never', classes: 'never'}],
     '@stylistic/quote-props'                   : ['error', 'as-needed'],
-    '@stylistic/quotes'                        : ['error', 'single', {avoidEscape: true, allowTemplateLiterals: false}],
+    '@stylistic/quotes'                        : ['error', 'single', {avoidEscape: true, allowTemplateLiterals: 'never'}],
     '@stylistic/rest-spread-spacing'           : ['error', 'never'],
     '@stylistic/semi'                          : ['error', 'never'],
     '@stylistic/semi-spacing'                  : ['error', {before: false, after: true}],
